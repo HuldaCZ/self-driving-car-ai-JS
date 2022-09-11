@@ -16,7 +16,12 @@ if (localStorage.getItem("bestBrain")) {
   for (let i = 0; i < cars.length; i++) {
     cars[i].brain = JSON.parse(localStorage.getItem("bestBrain"));
     if (i != 0) {
-      NeuralNetwork.mutate(cars[i].brain, 0.12);
+      NeuralNetwork.mutate(
+        cars[i].brain,
+        0.12 - localStorage.getItem("generation") > 0.05
+          ? 0.12 - localStorage.getItem("generation")
+          : 0.05
+      );
     }
   }
 }
@@ -42,12 +47,12 @@ for (let i = 0; i < 60; i++) {
 animate();
 
 function save() {
-  console.log(bestCar);
   localStorage.setItem("bestBrain", JSON.stringify(bestCar.brain));
+  localStorage.setItem("generation", Number(localStorage.getItem("generation")) + 0.01 || 0);
 }
 
 function discard() {
-  localStorage.removeItem("bestBrain");
+  localStorage.clear();
 }
 
 function genereateCars(N) {
