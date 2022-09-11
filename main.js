@@ -31,11 +31,12 @@ const traffic = [
   new Car(road.getLaneCenter(2), -700, 30, 50, "DUMMY", 2),
 ];
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 60; i++) {
   // random inreger between 0 and 2
-  const lane = Math.floor(Math.random() * 3);
+  const lane = () => Math.floor(Math.random() * 3);
 
-  traffic.push(new Car(road.getLaneCenter(lane), -150 * i - 1000, 30, 50, "DUMMY", 2));
+  traffic.push(new Car(road.getLaneCenter(lane()), -150 * i - 1000, 30, 50, "DUMMY", 2));
+  traffic.push(new Car(road.getLaneCenter(lane()), -150 * i - 1000, 30, 50, "DUMMY", 2));
 }
 
 animate();
