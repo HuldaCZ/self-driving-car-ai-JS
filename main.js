@@ -40,8 +40,8 @@ for (let i = 0; i < 60; i++) {
   // random inreger between 0 and 2
   const lane = () => Math.floor(Math.random() * 3);
 
-  traffic.push(new Car(road.getLaneCenter(lane()), -150 * i - 1000, 30, 50, "DUMMY", 2));
-  traffic.push(new Car(road.getLaneCenter(lane()), -150 * i - 1000, 30, 50, "DUMMY", 2));
+  traffic.push(new Car(road.getLaneCenter(lane()), -180 * i - 1000, 30, 50, "DUMMY", 2));
+  traffic.push(new Car(road.getLaneCenter(lane()), -180 * i - 1000, 30, 50, "DUMMY", 2));
 }
 
 animate();

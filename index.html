@@ -6,9 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Self driving car</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2EK8T9SE3Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-2EK8T9SE3Z");
+    </script>
   </head>
   <body>
-    <div class="main" >
+    <div class="main">
       <canvas id="carCanvas"></canvas>
       <div class="verticalButtons">
         <button id="save" onclick="save()">&#128191;</button>
